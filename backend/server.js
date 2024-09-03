@@ -23,7 +23,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/books', bookRoutes);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+const URL = process.env.MONGO_URI || "mongodb+srv://harshitjaiin:DTU188jain@harshitxdev.6zuqfbb.mongodb.net/BookExchange"
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB connected successfully.');
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
