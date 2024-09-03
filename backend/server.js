@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get("/" , (req, res) => {
+  return res.send("Hello World");
+})
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/books', bookRoutes);
