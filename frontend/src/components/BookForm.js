@@ -14,7 +14,7 @@ function BookForm({ onBookAdded }) {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        'http://localhost:5000/api/books',
+        'https://book-exchange-backend.vercel.app/api/books',
         { title, author, genre },
         { headers: { Authorization: `Bearer ${token}` } }
       );
